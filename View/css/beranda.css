@@ -1,0 +1,100 @@
+/* Beda */
+.gambar1 img {
+  vertical-align: middle;
+  width: 120%;
+  height: 250px;
+  max-width: 1280px;
+}
+
+form.example input[type=text] {
+  position: relative;
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: right;
+  right: -395px;
+  bottom: -120px;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  position: relative;
+  float: right;
+  width: 15%;
+  padding: 10px;
+  left: 140%;
+  top: 73px;
+  background: white;
+  color: black;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.imageContainer {
+  vertical-align: middle;
+  width: 120%;
+  height: 250px;
+  /* max-width: 100%; */
+  max-width: 1400px;
+  margin-right: -20px;
+  background-image: url(../Asset/Beranda.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.kata1 {
+  color: white;
+  font-size: 24px;
+  top: 40%;
+  position: relative;
+  right: -65%;
+}
+
+.wrapper {
+  border-radius: 15px;
+  width: 1170px;
+  margin: 20px auto 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding: 20px;
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.wrapper-user {
+  font-size: 20px;
+}
+
+.wrapper-dataset {
+  border-radius: 15px;
+  max-width: 1170px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 5px 10px 10px #888888;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.wrapper-upper {
+  margin-top: 10px;
+}
+
+.wrapper-title {
+  margin-top: 3px;
+  float: left;
+}
+
+.wrapper-action {
+  float: right;
+}

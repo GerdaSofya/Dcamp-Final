@@ -1,0 +1,55 @@
+.text-edit-profil {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.container-edit-profil {
+  padding-top: 0px;
+  padding-left: 100px;
+  margin: 20px;
+  border-radius: 5px;
+  width: 40%;
+}
+
+.formbutton {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+input[type=text],
+[type=password],
+[type=email],
+select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=button] {
+  background-color: #F90303;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit] {
+  background-color: #F90303;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #F90303;
+}
