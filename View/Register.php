@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<?php include("header-footer/header-user.php") ?>
+<?php include("header-footer/header-reglog.php") ?>
 
   <!-- Sign up form -->
   <form action="" method="post">
@@ -60,8 +60,8 @@
           </form>
         </div>
         <div class="signup-image">
-          <figure><img src="../Register (user)/Images/signup-image.jpg" alt="sign up image"></figure>
-          <a href="#" class="signup-image-link">I am already member</a>
+          <figure><img src="Asset/signup-image.jpg" alt="sign up image"></figure>
+          <a href="login.php" class="signup-image-link">I am already member</a>
         </div>
       </div>
     </div>
