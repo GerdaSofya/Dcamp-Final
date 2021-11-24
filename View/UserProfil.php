@@ -16,9 +16,11 @@
   <?php include("header-footer/header-user.php") ?>
 
   <?php
-  $sql = "SELECT * from pengguna WHERE id='2'";
+  session_start();
+  $id = $_SESSION['id'];
+  $sql = "SELECT * from pengguna WHERE id='$id'";
   $data = $koneksi->query($sql);
-  $row = $data->fetchAll();
+  $row = $data->fetch();
   ?>
   <div class="wrapper">
     <h2>Profil Pengguna&nbsp;&nbsp;<span><a href="#" class="btn btn-success" role="button">edit</a>
@@ -46,7 +48,7 @@
     <br>
     <h2>Dataset Pengguna</h2>
     <?php
-    $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE pengguna_id='2'";
+    $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE pengguna_id='$id'";
     $data2 = $koneksi->query($sql2);
     $row2 = $data2->fetchAll();
     foreach ($row2 as $dataset) {

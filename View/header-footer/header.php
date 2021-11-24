@@ -1,4 +1,4 @@
-<?php require_once("../Config/Connection.php"); ?>
+<?php require_once("Config/Connection.php"); ?>
 
 <div class="header">
     <div class="header-logo">DCamp</div>
