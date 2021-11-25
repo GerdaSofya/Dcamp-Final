@@ -35,14 +35,14 @@
                     foreach ($row as $dataset) {
                 ?>
                 <tr>
-                    <td><?php echo $dataset->id ?></td>
-                    <td><?php echo $dataset->email ?></td>
-                    <td><?php echo $dataset->username ?></td>
-                    <td><?php echo $dataset->nama ?></td>
-                    <td><?php echo $dataset->instansi ?></td>
+                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->id ?></a></td>
+                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->email ?></a></td>
+                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->username ?></a></td>
+                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama ?></a></td>
+                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->instansi ?></a></td>
                     <td class="text-right">
                         <button class="btn btn-primary">Edit</button>
-                        <a class="btn btn-danger" href="">Delete</a>
+                        <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
                     </td>
                 </tr>
                 <?php
