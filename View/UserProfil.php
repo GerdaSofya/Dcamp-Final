@@ -46,7 +46,7 @@
       </table>
     </div>
     <br>
-    <h2>Dataset Pengguna</h2>
+    <h2>Dataset Pengguna &nbsp;<a href='#' class='btn btn-btn btn-success' role='button'>Tambah</a></h2>
     <?php
     $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE pengguna_id='$id'";
     $data2 = $koneksi->query($sql2);

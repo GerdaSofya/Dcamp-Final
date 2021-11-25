@@ -40,7 +40,7 @@
     <br>
 
     <?php
-    $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE pengguna_id='2'";
+    $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id";
     $data2 = $koneksi->query($sql2);
     $row2 = $data2->fetchAll();
     foreach ($row2 as $dataset) {
