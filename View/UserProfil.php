@@ -23,8 +23,7 @@
   $row = $data->fetch();
   ?>
   <div class="wrapper">
-    <h2>Profil Pengguna&nbsp;&nbsp;<span><a href="#" class="btn btn-success" role="button">edit</a>
-        <a href="#" class="btn btn-danger" role="button">hapus</a></span></h2>
+    <h2>Profil Pengguna&nbsp;&nbsp;<span><a href="UserEditProfil.php" class="btn btn-success" role="button">edit</a>
     </span>
     <div class="wrapper-user">
       <table>
