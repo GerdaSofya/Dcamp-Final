@@ -41,7 +41,7 @@
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama ?></a></td>
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->instansi ?></a></td>
                     <td class="text-right">
-                        <button class="btn btn-primary">Edit</button>
+                        <a class="btn btn-primary" href="<?php echo "AdminEditProfil.php?id=$dataset->id"?>">Edit</a>
                         <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
                     </td>
                 </tr>

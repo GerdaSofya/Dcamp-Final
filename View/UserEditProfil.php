@@ -28,7 +28,7 @@
       <input type="text" id="finstansi" name="instansi" value="<?php echo "$row->instansi" ?>"><br>
       <div class="formbutton">
         <input type="submit" value="Simpan" name="submitform">
-        <input type="button" value="Batal" onclick="window.location.href='UserEditProfil.php';">
+        <input type="button" value="Batal" onclick="window.location.href='UserProfil.php';">
       </div>
     </form>
 
