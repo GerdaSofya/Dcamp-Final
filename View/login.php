@@ -10,9 +10,8 @@
 
 	<link rel="stylesheet" href="css/login.css">
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+	<script src="https://kit.fontawesome.com/2a4e091a9b.js" crossorigin="anonymous">
+        </script>
 
 </head>
 
