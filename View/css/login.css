@@ -7,11 +7,6 @@
 
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 
-/* ---------- ERIC MEYER'S RESET CSS ---------- */
-/* ---------- http://meyerweb.com/eric/tools/css/reset/ ---------- */
-
-@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
-
 /* ---------- FONTAWESOME ---------- */
 
 [class*="fontawesome-"]:before {
@@ -45,7 +40,9 @@ input {
 }
 
 /* ---------- LOGIN ---------- */
-
+fieldset {
+  border : 0px solid;
+}
 #login {
   margin: 50px auto;
   width: 400px;
