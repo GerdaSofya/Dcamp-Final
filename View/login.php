@@ -16,7 +16,6 @@
 </head>
 
 <body>
-
 	<?php include("header-footer/header-reglog.php") ?>
 	<div id="login">
 
