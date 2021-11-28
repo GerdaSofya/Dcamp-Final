@@ -1,17 +1,3 @@
-@charset "utf-8";
-/* CSS Document */
-
-/* ---------- FONTAWESOME ---------- */
-/* ---------- http://fortawesome.github.com/Font-Awesome/ ---------- */
-/* ---------- http://weloveiconfonts.com/ ---------- */
-
-@import url(http://weloveiconfonts.com/api/?family=fontawesome);
-
-/* ---------- FONTAWESOME ---------- */
-
-[class*="fontawesome-"]:before {
-  font-family: 'FontAwesome', sans-serif;
-}
 
 /* ---------- GENERAL ---------- */
 
@@ -40,11 +26,20 @@ input {
 }
 
 /* ---------- LOGIN ---------- */
-fieldset {
-  border : 0px solid;
+fieldset{
+  border : 0px;
 }
-#login {
-  margin: 50px auto;
+#login fieldset {
+  margin: 0px auto;
+  width: 200px;
+  border: 0px solid;
+  padding: 0px;
+  border-radius: 20px;
+  
+}
+
+#login  {
+  margin:  20px auto;
   width: 400px;
   border: 0px solid;
   padding: 0px;
@@ -125,7 +120,7 @@ li {
   width: 100%;
   font-family: -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  margin-top: 0px;
+  margin-top: -17px;
 }
 
 .header-logo {
