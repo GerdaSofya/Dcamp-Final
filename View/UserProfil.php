@@ -45,7 +45,7 @@
       </table>
     </div>
     <br>
-    <h2>Dataset Pengguna &nbsp;<a href='#' class='btn btn-btn btn-success' role='button'>Tambah</a></h2>
+    <h2>Dataset Pengguna &nbsp;<a href='UploadDataset.php' class='btn btn-btn btn-success' role='button'>Tambah</a></h2>
     <?php
     $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE pengguna_id='$id'";
     $data2 = $koneksi->query($sql2);
@@ -54,7 +54,7 @@
       echo "<div class='wrapper-dataset'>";
       echo "  <div class='wrapper-upper'>";
       echo "    <div class='wrapper-title'>";
-      echo "      <p style='font-size: 18px;'><b>" . $dataset->judul . "&nbsp;&nbsp;</b><span
+      echo "      <p style='font-size: 18px;'><b><a href='UserPreviewDataset.php?judul=$dataset->judul' class='text-dark text-decoration-none'>" . $dataset->judul . "</a>&nbsp;&nbsp;</b><span
                    style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
       echo "    </div>";
       echo "    <div class='wrapper-action'>";
