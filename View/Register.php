@@ -22,7 +22,7 @@
 
   <!-- Sign up form -->
 
-  <form action="Config/Register.php" method="POST">
+  <form action="../Config/Register.php" method="POST">
     <section class="signup">
       <div class="animate__animated animate__fadeInUp">
         <div class="container">
