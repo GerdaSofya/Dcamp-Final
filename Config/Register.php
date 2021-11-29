@@ -28,7 +28,7 @@ if(isset($_POST['signup'])){
 
     if($saved) echo "<script>
     alert('Register Berhasil !');
-    document.location.href = 'Register.php';
+    document.location.href = '../View/Register.php';
     </script>";;
 }
 
