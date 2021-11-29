@@ -51,9 +51,7 @@
                    style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
       echo "    </div>";
       echo "    <div class='wrapper-action'>";
-      echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
-      echo "       <a href='#' class='btn btn-btn btn-success' role='button'>edit</a>";
-      echo "       <a href='#' class='btn btn-danger' role='button'>hapus</a>";
+      echo "       <a href='View/login.php'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
       echo "     </div>";
       echo "</div>";
       echo "<br><br>";

@@ -31,6 +31,10 @@
               <h2 class="form-title">Sign up</h2>
               <form method="POST" class="register-form" id="register-form">
                 <div class="form-group">
+                  <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                  <input type="text" name="username" id="username" placeholder="Username" required />
+                </div>
+                <div class="form-group">
                   <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                   <input type="text" name="name" id="name" placeholder="Your Name" required />
                 </div>
@@ -41,6 +45,10 @@
                 <div class="form-group">
                   <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                   <input type="password" name="pass" id="pass" minlength="4" maxlength="20" placeholder="Password" required />
+                </div>
+                <div class="form-group">
+                  <label for="instansi"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                  <input type="text" name="instansi" id="instansi" placeholder="Asal Instansi" required />
                 </div>
                 <div class="form-group form-button">
                   <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />

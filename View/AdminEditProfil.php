@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>Edit Profil</title>
   <link rel="stylesheet" href="css/EditProfil.css">
-  <link rel="stylesheet" href="css/header-footer-fixed.css">
+  <link rel="stylesheet" href="css/header-footer.css">
 </head>
 
 <body>

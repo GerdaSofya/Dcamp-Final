@@ -19,7 +19,6 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">E-Mail</th>
                     <th scope="col">Username</th>
                     <th scope="col">Nama</th>
@@ -29,13 +28,12 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT id,email,username,nama,instansi from pengguna";
+                    $sql = "SELECT id,email,username,nama,instansi from pengguna WHERE level=2";
                     $data = $koneksi->query($sql);
                     $row = $data->fetchAll();
                     foreach ($row as $dataset) {
                 ?>
                 <tr>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->id ?></a></td>
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->email ?></a></td>
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->username ?></a></td>
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama ?></a></td>
