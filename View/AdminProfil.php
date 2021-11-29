@@ -53,7 +53,7 @@
       echo "<div class='wrapper-dataset'>";
       echo "  <div class='wrapper-upper'>";
       echo "    <div class='wrapper-title'>";
-      echo "      <p style='font-size: 18px;'><b>" . $dataset->judul . "&nbsp;&nbsp;</b><span
+      echo "      <p style='font-size: 18px;'><b><a href='AdminPreviewDataset.php?judul=$dataset->judul' class='text-dark text-decoration-none'>" . $dataset->judul . "</a>&nbsp;&nbsp;</b><span
                    style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
       echo "    </div>";
       echo "    <div class='wrapper-action'>";
