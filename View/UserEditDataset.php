@@ -1,7 +1,7 @@
 <?php
 include "../Config/Connection.php";
 $judul = $_GET['judul'];
-$sql = 'SELECT * FROM dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE judul=:judul';
+$sql = 'SELECT dataset.id, dataset.judul, dataset.deskripsi, dataset.kategori_id, dataset.sumber, kategori.nama_kategori, dataset.jumlah_data, dataset.link_download FROM dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE judul=:judul';
 $stmt = $koneksi->prepare($sql);
 $stmt->execute([':judul' => $judul]);
 $data = $stmt->fetch();
