@@ -22,11 +22,11 @@ $data = $stmt->fetch();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/header-footer-relative.css">
+    <link rel="stylesheet" href="css/header-footer.css">
 </head>
 
 <body>
-    <?php include "header-footer/header-admin.php" ?>
+    <?php include "header-footer/header-user.php" ?>
     <div class="container ml-5">
         <div class="row">
             <div class="col-md-10">
