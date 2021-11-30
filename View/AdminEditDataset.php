@@ -1,7 +1,7 @@
 <?php
 include "../Config/Connection.php";
 $judul = $_GET['judul'];
-$sql = 'SELECT dataset.id, dataset.judul, dataset.deskripsi, dataset.kategori_id, dataset.sumber, kategori.nama_kategori, dataset.jumlah_data, dataset.link_download FROM dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE judul=:judul';
+$sql = 'SELECT dataset.id, dataset.pengguna_id, dataset.judul, dataset.deskripsi, dataset.kategori_id, dataset.sumber, kategori.nama_kategori, dataset.jumlah_data, dataset.link_download FROM dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE judul=:judul';
 $stmt = $koneksi->prepare($sql);
 $stmt->execute([':judul' => $judul]);
 $data = $stmt->fetch();
@@ -37,6 +37,7 @@ $data = $stmt->fetch();
 
                 <form action="../Config/adminedit_ds.php" method="POST">
                     <input type="hidden" name="id_dataset" value="<?php echo $data->id; ?>" required />
+                    <input type="hidden" name="id_pengguna" value="<?php echo $data->pengguna_id; ?>" required />
                     <div class="form-group">
                         <label for="inputJudul">Judul</label>
                         <input type="text" class="form-control" id="inputJudul" name="inpJudul" value="<?php echo $data->judul; ?>" placeholder="Masukkan judul">

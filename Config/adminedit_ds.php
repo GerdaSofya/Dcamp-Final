@@ -2,6 +2,7 @@
 require_once("Connection.php");
 
 if (!empty($_POST["adminedit_ds"])) {
+    $id = $_POST['id_pengguna'];
     $tgl = date('Y-m-d');
     $pdo_statement = $koneksi->prepare(
         "UPDATE dataset SET 
@@ -16,6 +17,6 @@ if (!empty($_POST["adminedit_ds"])) {
     );
     $result = $pdo_statement->execute();
     if ($result) {
-        header('location: ../View/AdminBeranda.php');
+        header('location: ../View/AdminProfil.php?id='.$id);
     }
 }

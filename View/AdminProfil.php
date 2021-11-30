@@ -22,7 +22,7 @@
   $row = $data->fetch();
   ?>
   <div class="wrapper">
-    <h2>Profil Pengguna&nbsp;&nbsp;<span><a href="#" class="btn btn-success" role="button">edit</a></span></h2>
+    <h2>Profil Pengguna&nbsp;&nbsp;<span><a href="<?php echo "AdminEditProfil.php?id=$id" ?>" class="btn btn-success" role="button">edit</a></span></h2>
     </span>
     <div class="wrapper-user">
       <table>
@@ -58,8 +58,8 @@
       echo "    </div>";
       echo "    <div class='wrapper-action'>";
       echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
-      echo "       <a href='#' class='btn btn-btn btn-success' role='button'>edit</a>";
-      echo "       <a href='#' class='btn btn-danger' role='button'>hapus</a>";
+      echo "       <a href='AdminEditDataset.php?judul=$dataset->judul' class='btn btn-btn btn-success' role='button'>edit</a>";
+      echo "       <a href='../Config/DeleteDatasetAdmin.php?id=$dataset->judul' class='btn btn-danger' role='button'>hapus</a>";
       echo "     </div>";
       echo "</div>";
       echo "<br><br>";
