@@ -26,7 +26,7 @@ $data = $stmt->fetch();
 </head>
 
 <body>
-    <?php include "header-footer/header-user.php" ?>
+    <?php include "header-footer/header-admin.php" ?>
     <div class="container ml-5">
         <div class="row">
             <div class="col-md-10">

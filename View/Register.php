@@ -13,7 +13,6 @@
   <meta charset="utf-8">
   <title>Register</title>
   <link rel="stylesheet" href="css/Register.css">
-  <link rel="stylesheet" href="css/header-footer-fixed.css">
   <link rel="stylesheet" href="animated">
 </head>
 

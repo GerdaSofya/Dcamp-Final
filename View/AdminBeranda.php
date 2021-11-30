@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Dcamp</title>
     <link rel="stylesheet" href="css/beranda.css">
-    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/header-footer-relative.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/2a4e091a9b.js" crossorigin="anonymous">
@@ -52,8 +52,8 @@
             echo "    </div>";
             echo "    <div class='wrapper-action'>";
             echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
-            echo "       <a href='#' class='btn btn-btn btn-success' role='button'>edit</a>";
-            echo "       <a href='#' class='btn btn-danger' role='button'>hapus</a>";
+            echo "       <a href='AdminEditDataset.php?judul= $dataset->judul ' class='btn btn-btn btn-success' role='button'>edit</a>";
+            echo "       <a href='../Config/DeleteDataset.php?id=$dataset->judul' class='btn btn-danger' role='button'>hapus</a>";
             echo "     </div>";
             echo "</div>";
             echo "<br><br>";
