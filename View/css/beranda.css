@@ -47,9 +47,7 @@ form.example::after {
   vertical-align: middle;
   width: 120%;
   height: 250px;
-  /* max-width: 100%; */
-  max-width: 1400px;
-  /*margin-right: -20px;*/
+  max-width: auto;
   background-image: url(../Asset/Beranda.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
