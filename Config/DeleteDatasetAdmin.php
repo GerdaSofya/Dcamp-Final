@@ -11,5 +11,5 @@ $query = $koneksi->prepare($sql);
 $query->execute(array(':id' => $id));
 
 //redirecting to the display page (index.php in our case)
-header("Location:../View/AdminBeranda.php");
-?>
+// header("Location:../View/AdminBeranda.php");
+?><script>document.location="../View/AdminProfil.php";</script>
