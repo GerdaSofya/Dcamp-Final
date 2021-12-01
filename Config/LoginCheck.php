@@ -11,8 +11,6 @@ if (isset($_POST['login'])) {
     $dbpass = $_POST['password'];
 // menyeleksi data user dengan username dan password yang sesuai
     $login = $koneksi->query("select * from pengguna where username='$dbuser' and password='$dbpass'");
-// menghitung jumlah data yang ditemukan
-    // $cek = $koneksi->execute($login);
 
     $data = $login->fetch();
 
@@ -29,7 +27,7 @@ if (isset($_POST['login'])) {
             // alihkan ke halaman dashboard admin
             header("location:../View/AdminBeranda.php");
 
-            // cek jika user login sebagai pegawai
+            // cek jika user login sebagai user
         } else if ($data->level == "2") {
 
             // buat session login dan username
@@ -37,7 +35,7 @@ if (isset($_POST['login'])) {
 			$_SESSION['id'] = $data->id;
             $_SESSION['level'] = "2";
 
-            // alihkan ke halaman dashboard pegawai
+            // alihkan ke halaman dashboard user
             header("location:../View/UserBeranda.php");
 
         } else {
