@@ -18,55 +18,82 @@
 
     <div class="imageContainer">
 
-        <div class="kata1">
-            Dataset Campus <br>
-            Temukan data yang kamu inginkan disini
-
-        </div>
-        <div class="topnav">
-            <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-                <input type="text" placeholder="Masukan kata kunci pencarian" name="search2">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-        </div>
+    <div class="kata1">
+      Dataset Campus <br>
+      Temukan data yang kamu inginkan disini
 
     </div>
+    <div class="topnav">
+      <form class="example" method="POST" action="AdminBeranda.php" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Masukan kata kunci pencarian" name="search">
+        <button type="submit" name="cari"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
 
-    <div class="wrapper">
+  </div>
 
-        <div class="wrapper-user">
+  <div class="wrapper">
 
-        </div>
-        <br>
+    <div class="wrapper-user">
 
-        <?php
-        $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id";
-        $data2 = $koneksi->query($sql2);
-        $row2 = $data2->fetchAll();
-        foreach ($row2 as $dataset) {
-            echo "<div class='wrapper-dataset'>";
-            echo "  <div class='wrapper-upper'>";
-            echo "    <div class='wrapper-title'>";
-            echo "      <p style='font-size: 18px;'><b><a href='AdminPreviewDataset.php?judul=$dataset->judul' class='text-dark text-decoration-none'>" . $dataset->judul . "</a>&nbsp;&nbsp;</b><span
-                   style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
-            echo "    </div>";
-            echo "    <div class='wrapper-action'>";
-            echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
-            // echo "       <a href='AdminEditDataset.php?judul=$dataset->judul' class='btn btn-btn btn-success' role='button'>edit</a>";
-            // echo "       <a href='../Config/DeleteDatasetAdmin.php?id=$dataset->judul' class='btn btn-danger' role='button'>hapus</a>";
-            echo "     </div>";
-            echo "</div>";
-            echo "<br><br>";
-            echo "<p>" . $dataset->deskripsi . "</p>";
-            echo "<p>";
-            echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->jumlah_data . "</span>&nbsp;&nbsp;";
-            echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->sumber . "</span>&nbsp;&nbsp;";
-            echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->waktu . "</span>&nbsp;&nbsp;";
-            echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->nama_kategori . "</span>";
-            echo " </p>";
-            echo "</div>";
-        }
-        ?>
+    </div>
+    <br>
+
+    <?php
+    if (isset($_POST['cari'])) {
+      $cari = "%".$_POST['search']."%";
+      $sql = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id WHERE dataset.judul LIKE :nama";
+      $data = $koneksi->prepare($sql);
+      $data->BindParam(":nama",$cari);
+      $data->execute();
+      $row = $data->fetchAll();
+      foreach ($row as $dataset1) {
+        echo "<div class='wrapper-dataset'>";
+        echo "  <div class='wrapper-upper'>";
+        echo "    <div class='wrapper-title'>";
+        echo "      <p style='font-size: 18px;'><b>" . $dataset1->judul . "&nbsp;&nbsp;</b><span
+                    style='color:darkgrey;font-size:15px;'>" . $dataset1->nama . "</span></p>";
+        echo "    </div>";
+        echo "    <div class='wrapper-action'>";
+        echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
+        echo "     </div>";
+        echo "</div>";
+        echo "<br><br>";
+        echo "<p>" . $dataset1->deskripsi . "</p>";
+        echo "<p>";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset1->jumlah_data . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset1->sumber . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset1->waktu . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset1->nama_kategori . "</span>";
+        echo " </p>";
+        echo "</div>";
+      }
+    }
+      $sql2 = "SELECT * from dataset inner join kategori ON dataset.kategori_id=kategori.id inner join pengguna ON dataset.pengguna_id=pengguna.id";
+      $data2 = $koneksi->query($sql2);
+      $row2 = $data2->fetchAll();
+      foreach ($row2 as $dataset) {
+        echo "<div class='wrapper-dataset'>";
+        echo "  <div class='wrapper-upper'>";
+        echo "    <div class='wrapper-title'>";
+        echo "      <p style='font-size: 18px;'><b>" . $dataset->judul . "&nbsp;&nbsp;</b><span
+                     style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
+        echo "    </div>";
+        echo "    <div class='wrapper-action'>";
+        echo "       <a href='View/login.php'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
+        echo "     </div>";
+        echo "</div>";
+        echo "<br><br>";
+        echo "<p>" . $dataset->deskripsi . "</p>";
+        echo "<p>";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->jumlah_data . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->sumber . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->waktu . "</span>&nbsp;&nbsp;";
+        echo "   <span style='color:darkgrey;font-size:15px;'>" . $dataset->nama_kategori . "</span>";
+        echo " </p>";
+        echo "</div>";
+      }
+    ?>
 
     </div>
     </div>

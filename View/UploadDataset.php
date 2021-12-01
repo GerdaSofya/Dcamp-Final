@@ -40,15 +40,15 @@
                         <select name="inpKategori" class="form-control" required>
                             <option value="">--Pilih Kategori--</option>
                             <?php
-                                $sql= "SELECT * from kategori";
-                                $data = $koneksi->query($sql);
-                                $row = $data->fetchAll();
+                                $sql1= "SELECT * from kategori";
+                                $kon = $koneksi->query($sql1);
+                                $row = $kon->fetchAll();
                                 foreach ($row as $dkategori) {
                             ?>
                             <option value="<?=$dkategori->id ?>"><?php echo $dkategori->nama_kategori ?></option>
                             <?php 
-                                } 
-                            ?>
+                                }
+                            ?> 
                         </select>
                     </div><br>
                     <div class="form-group">

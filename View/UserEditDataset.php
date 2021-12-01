@@ -22,7 +22,7 @@ $data = $stmt->fetch();
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/header-footer-relative.css">
 </head>
 
 <body>
@@ -49,8 +49,16 @@ $data = $stmt->fetch();
                         <label for="inputKategori">Kategori</label><br>
                         <select name="inpKategori" class="form-control" required>
                             <option value="<?php echo $data->kategori_id; ?>" selected hidden><?php echo $data->nama_kategori; ?></option>
-                            <option value='1'>Teknologi Informasi</option>
-                            <option value='2'>Sumber Daya Manusia</option>
+                            <?php
+                                $sql1= "SELECT * from kategori";
+                                $kon = $koneksi->query($sql1);
+                                $row = $kon->fetchAll();
+                                foreach ($row as $dkategori) {
+                            ?>
+                            <option value="<?=$dkategori->id ?>"><?php echo $dkategori->nama_kategori ?></option>
+                            <?php 
+                                }
+                            ?> 
                         </select>
                     </div><br>
                     <div class="form-group">
