@@ -16,8 +16,7 @@
   <?php include("header-footer/header-admin.php") ?>
 
   <?php
-  session_start();
-  $id = $_SESSION['id'];
+  $id = $_GET['id'];
   $sql = "SELECT * from pengguna WHERE id='$id'";
   $data = $koneksi->query($sql);
   $row = $data->fetch();
