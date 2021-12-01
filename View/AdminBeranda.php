@@ -51,8 +51,8 @@
         echo "<div class='wrapper-dataset'>";
         echo "  <div class='wrapper-upper'>";
         echo "    <div class='wrapper-title'>";
-        echo "      <p style='font-size: 18px;'><b><a href='UserPreviewDataset.php?judul=$dataset->judul' class='text-dark text-decoration-none'>" . $dataset->judul . "</a>&nbsp;&nbsp;</b><span
-        style='color:darkgrey;font-size:15px;'>" . $dataset->nama . "</span></p>";
+        echo "      <p style='font-size: 18px;'><b><a href='UserPreviewDataset.php?judul=$dataset->judul' class='text-dark text-decoration-none'>" . $dataset1->judul . "</a>&nbsp;&nbsp;</b><span
+        style='color:darkgrey;font-size:15px;'>" . $dataset1->nama . "</span></p>";
         echo "    </div>";
         echo "    <div class='wrapper-action'>";
         echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
