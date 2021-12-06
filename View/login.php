@@ -25,10 +25,10 @@
 
 			<fieldset>
 				<p><label for="username">Username</label></p>
-				<p><input type="username" id="username" name="username" value="username" onBlur="if(this.value=='')this.value='username'" onFocus="if(this.value=='username')this.value=''"></p>
+				<p><input type="username" id="username" name="username" value="username" onBlur="if(this.value=='')this.value='username'" onFocus="if(this.value=='username')this.value=''" required></p>
 
 				<p><label for="password">Password</label></p>
-				<p><input type="password" id="password" name="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''"></p>
+				<p><input type="password" id="password" name="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')this.value=''" required></p>
 
 				<p><input type="submit" name ="login" value="Login"></p>
 				<p>Belum punya akun? <a href="Register.php" class="daftar">Daftar Sekarang!</a></p>
