@@ -29,11 +29,11 @@
                 <form action="../Config/upload_ds.php" method="POST">
                     <div class="form-group">
                         <label for="inputJudul">Judul</label>
-                        <input type="text" class="form-control" id="inputJudul" name="inpJudul" placeholder="Masukkan judul">
+                        <input type="text" class="form-control" id="inputJudul" name="inpJudul" placeholder="Masukkan judul" required>
                     </div>
                     <div class="form-group">
                         <label for="inputDeskripsi">Deskripsi</label>
-                        <textarea class="form-control" id="inputDeskripsi" rows="3" name="inpDeskripsi"></textarea>
+                        <textarea class="form-control" id="inputDeskripsi" rows="3" name="inpDeskripsi" required></textarea>
                     </div>
                     <div class="dropdown">
                         <label for="inputKategori">Kategori</label><br>
@@ -53,17 +53,17 @@
                     </div><br>
                     <div class="form-group">
                         <label for="inputSumber">Sumber</label>
-                        <input type="text" class="form-control" id="inputSumber" name="inpSumber" placeholder="Masukkan sumber">
+                        <input type="text" class="form-control" id="inputSumber" name="inpSumber" placeholder="Masukkan sumber" required>
                     </div>
                     <div class="form-group">
                         <label for="inputJlhData">Jumlah Data</label>
-                        <input type="number" class="form-control" id="inputJlhData" name="inpJlhData" placeholder="Masukkan jumlah data">
+                        <input type="number" class="form-control" id="inputJlhData" name="inpJlhData" placeholder="Masukkan jumlah data" required>
                     </div>
                     <div class="form-group">
                         <label for="inputLinkData">Link Data (Gdrive)</label>
-                        <input type="text" class="form-control" id="inputLinkData" name="inpLinkData" placeholder="Masukkan link data">
+                        <input type="text" class="form-control" id="inputLinkData" name="inpLinkData" placeholder="Masukkan link data" required>
                     </div>
-                    <button type="submit" class="btn tombol" name="upload_ds" value="Save" style="margin-bottom:3rem; background-color: red; color:white;">Submit</button><br>
+                    <button type="submit" class="btn tombol" name="upload_ds" value="Save" style="margin-bottom:3rem; background-color: red; color:white;" >Submit</button><br>
                 </form>
             </div>
         </div>
