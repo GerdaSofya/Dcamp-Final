@@ -15,7 +15,9 @@
 
 <body>
     <?php include "header-footer/header-admin.php"?>
+    <?php include_once("../Config/PagingListUser.php"); ?>
     <div class="container">
+        <br>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -28,26 +30,34 @@
             </thead>
             <tbody>
                 <?php
-                    $sql = "SELECT id,email,username,nama,instansi from pengguna WHERE level=2";
-                    $data = $koneksi->query($sql);
-                    $row = $data->fetchAll();
-                    foreach ($row as $dataset) {
+                    if(!empty($result)){
+                        foreach($result as $dataset) {
+                            {
                 ?>
-                <tr>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->email ?></a></td>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->username ?></a></td>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama ?></a></td>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->instansi ?></a></td>
-                    <td class="text-right">
-                        <a class="btn btn-primary" href="<?php echo "AdminEditProfil.php?id=$dataset->id"?>">Edit</a>
-                        <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
-                    </td>
-                </tr>
-                <?php
+                            <tr>
+                                <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->email ?></a></td>
+                                <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->username ?></a></td>
+                                <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama ?></a></td>
+                                <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->instansi ?></a></td>
+                                <td class="text-right">
+                                    <a class="btn btn-primary" href="<?php echo "AdminEditProfil.php?id=$dataset->id"?>">Edit</a>
+                                    <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
+                                </td>
+                            </tr>
+                            <?php
+                            }
+                        }
                     }
                 ?>
             </tbody>
         </table>
+        <?php
+            echo "<ul class='pagination'>";
+            for($j=1; $j <= $paginations; $j++) {
+                echo "<li class='page-item'><a class='page-link text-dark text-decoration-none' href=?start=$j>".$j."</a></li>";
+            }
+            echo "</ul>";
+        ?>
     </div>
     <?php include "header-footer/footer.php"?>
 </body>

@@ -15,6 +15,7 @@
 
 <body>
     <?php include "header-footer/header-admin.php"?>
+    <?php include_once("../Config/PagingKategori.php"); ?>
     <br>
     <div class="container ml-5">
 
@@ -40,25 +41,31 @@
             </thead>
             <tbody>
                 <?php
-                    $no = 1;
-                    $sql = "SELECT * from kategori";
-                    $data = $koneksi->query($sql);
-                    $row = $data->fetchAll();
-                    foreach ($row as $dataset) {
+                    $no = 1 + $start;
+                    if(!empty($result)){
+                        foreach($result as $dataset) {
                 ?>
-                <tr>
-                    <td><?php echo $no; ?> </td>
-                    <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama_kategori ?></a></td>
-                    <td class="text-right">
-                        <a class="btn btn-danger" href="<?php echo "../Config/AdminDeleteKategori.php?id=$dataset->nama_kategori"?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?php echo $no; ?> </td>
+                        <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->nama_kategori ?></a></td>
+                        <td class="text-right">
+                            <a class="btn btn-danger" href="<?php echo "../Config/AdminDeleteKategori.php?id=$dataset->nama_kategori"?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
+                        </td>
+                    </tr>
                 <?php
                     $no++;
                     }
+                }
                 ?>
             </tbody>
         </table>
+        <?php
+            echo "<ul class='pagination'>";
+            for($j=1; $j <= $paginations; $j++) {
+                echo "<li class='page-item'><a class='page-link text-dark text-decoration-none' href=?start=$j>".$j."</a></li>";
+            }
+            echo "</ul>";
+        ?>
         </div>
     </div>
     <?php include "header-footer/footer.php"?>
