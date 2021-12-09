@@ -39,11 +39,11 @@ $data = $stmt->fetch();
                     <input type="hidden" name="id_dataset" value="<?php echo $data->id; ?>" required />
                     <div class="form-group">
                         <label for="inputJudul">Judul</label>
-                        <input type="text" class="form-control" id="inputJudul" name="inpJudul" value="<?php echo $data->judul; ?>" placeholder="Masukkan judul" required>
+                        <input type="text" maxlength="100" class="form-control" id="inputJudul" name="inpJudul" value="<?php echo $data->judul; ?>" placeholder="Masukkan judul" required>
                     </div>
                     <div class="form-group">
                         <label for="inputDeskripsi">Deskripsi</label>
-                        <textarea class="form-control" id="inputDeskripsi" rows="3" name="inpDeskripsi" required><?php echo $data->deskripsi; ?></textarea>
+                        <textarea class="form-control" maxlength="255" id="inputDeskripsi" rows="3" name="inpDeskripsi" required><?php echo $data->deskripsi; ?></textarea>
                     </div>
                     <div class="dropdown">
                         <label for="inputKategori">Kategori</label><br>
@@ -60,20 +60,21 @@ $data = $stmt->fetch();
                                 }
                             ?> 
                         </select>
+                        <p style="color:grey">Kategori tidak ditemukan? hubungi admin melalui email 1910817210011@mhs.ulm.ac.id</p>
                     </div><br>
                     <div class="form-group">
                         <label for="inputSumber">Sumber</label>
-                        <input type="text" class="form-control" id="inputSumber" name="inpSumber" value="<?php echo $data->sumber; ?>" placeholder="Masukkan sumber" required>
-                    </div>
+                        <input type="text" maxlength="50" class="form-control" id="inputSumber" name="inpSumber" value="<?php echo $data->sumber; ?>" placeholder="Masukkan sumber" required>
+                    </div> 
                     <div class="form-group">
                         <label for="inputJlhData">Jumlah Data</label>
-                        <input type="text" class="form-control" id="inputJlhData" name="inpJlhData" value="<?php echo $data->jumlah_data; ?>" placeholder="Masukkan jumlah data" required>
+                        <input type="text" maxlength="20" class="form-control" id="inputJlhData" name="inpJlhData" value="<?php echo $data->jumlah_data; ?>" placeholder="Masukkan jumlah data" required>
                     </div>
                     <div class="form-group">
-                        <label for="inputLinkData">Link Data (Gdrive)</label>
-                        <input type="text" class="form-control" id="inputLinkData" name="inpLinkData" value="<?php echo $data->link_download; ?>" placeholder="Masukkan link data" required>
+                        <label for="inputLinkData">Link Data (URL)</label>
+                        <input type="url" class="form-control" id="inputLinkData" name="inpLinkData" value="<?php echo $data->link_download; ?>" placeholder="Masukkan link data" required>
                     </div>
-                    <button type="submit" class="btn tombol" name="useredit_ds" value="Save" style="margin-bottom:3rem; background-color: red; color:white;">Submit</button><br>
+                    <button type="submit" class="btn tombol" name="useredit_ds" value="Save" style="margin-bottom:3rem; background-color: red; color:white;">Update</button><br>
                 </form>
             </div>
         </div>

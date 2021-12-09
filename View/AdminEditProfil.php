@@ -17,17 +17,17 @@
     <h1 class="text-edit-profil">Edit Profil Pengguna</h1>
     <form action="" method="POST">
       <label for="fusername">Username</label><br>
-      <input type="text" id="fusername" name="username" value="<?php echo "$row->username" ?>" required><br>
+      <input type="text" id="fusername" pattern="^[a-zA-Z0-9]+" oninvalid="setCustomValidity('Please enter on alphabets and numerics only. ')" name="username" value="<?php echo "$row->username" ?>" required><br>
       <label for="fname">Nama</label><br>
       <input type="text" id="fname" name="name" value="<?php echo "$row->nama" ?>" required><br>
       <label for="fpassword">Password</label><br>
       <input type="password" id="fpassword" name="password" value="<?php echo "$row->password" ?>" required><br>
       <label for="femail">Email</label><br>
       <input type="email" id="femail" name="email" value="<?php echo "$row->email" ?>" required><br>
-      <label for="finstansi">Instansi</label><br>
+      <label for="finstansi">Program Studi</label><br>
       <input type="text" id="finstansi" name="instansi" value="<?php echo "$row->instansi" ?>" required><br>
       <div class="formbutton">
-        <input type="submit" value="Simpan" name="submitform">
+        <input type="submit" value="Update" name="submitform">
         <input type="button" value="Batal" onclick="window.location.href='AdminListUser.php';">
       </div>
     </form>

@@ -44,6 +44,9 @@ if (isset($_POST['login'])) {
             header("location:../View/login.php");
         }
     } else {
-        header("location:../View/login.php");
+        echo '<script type="text/javascript">';
+        echo ' alert("Username atau Password salah");';  //not showing an alert box.
+        echo ' window.location.href = "../View/login.php";';
+        echo '</script>'; 
     }
 }

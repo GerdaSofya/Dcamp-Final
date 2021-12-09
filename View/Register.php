@@ -21,7 +21,7 @@
 
   <!-- Sign up form -->
 
-  <form action="../Config/Register.php" method="POST">
+  <form action="Register.php" method="POST">
     <section class="signup">
       <div class="animate__animated animate__fadeInUp">
         <div class="container">
@@ -31,7 +31,7 @@
               <form method="POST" class="register-form" id="register-form">
                 <div class="form-group">
                   <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  <input type="text" name="username" id="username" placeholder="Username" required />
+                  <input type="text" pattern="^[a-zA-Z0-9]+" oninvalid="setCustomValidity('Please enter on alphabets and numerics only. ')" name="username" id="username" placeholder="Username" required />
                 </div>
                 <div class="form-group">
                   <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
@@ -46,8 +46,12 @@
                   <input type="password" name="pass" id="pass" minlength="4" maxlength="20" placeholder="Password" required />
                 </div>
                 <div class="form-group">
+                  <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                  <input type="password" name="copass" id="pass" minlength="4" maxlength="20" placeholder="Confirm Password" required />
+                </div>
+                <div class="form-group">
                   <label for="instansi"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                  <input type="text" name="instansi" id="instansi" placeholder="Asal Instansi" required />
+                  <input type="text" name="instansi" id="instansi" placeholder="Program Studi" required />
                 </div>
                 <div class="form-group form-button">
                   <input type="submit" name="signup" id="signup" class="form-submit" value="Register" />
@@ -70,5 +74,44 @@
   <!--Footer-->
   <?php include("header-footer/footer.php") ?>
 </body>
-
 </html>
+
+<?php
+
+include("../Config/Connection.php");
+
+if (isset($_POST['signup'])) {
+
+    $username = $_POST['username'];
+    $nama = $_POST['name'];
+    $password = $_POST['pass'];
+    $copassword = $_POST['copass'];
+    $email = $_POST['email'];
+    $instansi = $_POST['instansi'];
+
+    if($password != $copassword){
+      echo '<script type="text/javascript">';
+      echo ' alert("Konfirmasi Password tidak sesuai")';  //not showing an alert box.
+      echo '</script>';
+    }
+    else{
+      $select = "SELECT * FROM pengguna where username ='$username'";
+      $stmt = $koneksi->query($select);
+      $row = $stmt->fetch();
+      if ($row->username > 0){
+        echo '<script type="text/javascript">';
+        echo ' alert("Username sudah digunakan")';  //not showing an alert box.
+        echo '</script>';   
+      }
+      else{
+          $sql = "INSERT INTO pengguna(email, username, password, nama, instansi, level) 
+          VALUES (:email, :username, :password, :nama, :instansi, 2)";
+          $stmt2 = $koneksi->prepare($sql);
+          if ($stmt2->execute([':email' => $email, ':username' => $username, ':password' => $password, ':nama' => $nama, ':instansi' => $instansi])) {
+              $msg = 'Data inserted successfully';
+              header("location: ../View/login.php");
+          }
+      }
+    }
+}
+?>

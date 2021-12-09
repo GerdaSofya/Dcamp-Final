@@ -22,7 +22,7 @@
                     <th scope="col">E-Mail</th>
                     <th scope="col">Username</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">Instansi</th>
+                    <th scope="col">Program Studi</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -40,7 +40,7 @@
                     <td><a class="text-dark text-decoration-none" href="<?php echo "AdminProfil.php?id=$dataset->id"?>"><?php echo $dataset->instansi ?></a></td>
                     <td class="text-right">
                         <a class="btn btn-primary" href="<?php echo "AdminEditProfil.php?id=$dataset->id"?>">Edit</a>
-                        <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onClick=\"return confirm('Are you sure you want to delete?')\">Delete</a>
+                        <a class="btn btn-danger" href="<?php echo "../Config/DeleteUser.php?id=$dataset->id"?>" onclick="return confirm('Yakin Hapus?')">Delete</a>
                     </td>
                 </tr>
                 <?php

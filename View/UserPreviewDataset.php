@@ -62,8 +62,8 @@ $data = $stmt->fetch();
                         <input type="text" class="form-control" id="inputJlhData" name="inpJlhData" value="<?php echo $data->jumlah_data; ?>" placeholder="Masukkan jumlah data">
                     </div>
                     <div class="form-group">
-                        <label for="inputLinkData">Link Data (Gdrive)</label>
-                        <input type="text" class="form-control" id="inputLinkData" name="inpLinkData" value="<?php echo $data->link_download; ?>" placeholder="Masukkan link data">
+                        <label for="inputLinkData">Link Data (URL)</label>
+                        <input type="url" class="form-control" id="inputLinkData" name="inpLinkData" value="<?php echo $data->link_download; ?>" placeholder="Masukkan link data">
                     </div>
                     <a href="<?php echo $data->link_download; ?>" class="btn tombol" style="margin-bottom:3rem; background-color: red; color:white;" download>Download</a>
                     <br>

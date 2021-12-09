@@ -38,7 +38,7 @@
           <td><?php echo "$row->email"; ?></td>
         </tr>
         <tr>
-          <td>Instansi &nbsp;&nbsp;</td>
+          <td>Program Studi &nbsp;&nbsp;</td>
           <td>:&nbsp;</td>
           <td><?php echo "$row->instansi"; ?></td>
         </tr>
@@ -60,7 +60,7 @@
       echo "    <div class='wrapper-action'>";
       echo "       <a href='" . $dataset->link_download . "'><i style='vertical-align: -25%;' class='fas fa-download fa-2x'></i></a>";
       echo "       <a href='UserEditDataset.php?judul=$dataset->judul' class='btn btn-btn btn-success' role='button'>edit</a>";
-      echo "       <a href='../Config/DeleteDataset.php?id=$dataset->judul' class='btn btn-danger' role='button'>hapus</a>";
+      echo "       <a href='../Config/DeleteDataset.php?id=$dataset->judul' class='btn btn-danger' role='button' onclick=\"return confirm('Yakin Hapus?');\">hapus</a>";
       echo "     </div>";
       echo "</div>";
       echo "<br><br>";

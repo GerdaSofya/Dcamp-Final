@@ -32,6 +32,7 @@
 
 				<p><input type="submit" name ="login" value="Login"></p>
 				<p>Belum punya akun? <a href="Register.php" class="daftar">Daftar Sekarang!</a></p>
+				<p>Lupa Password? hubungi admin melalui email 1910817210011@mhs.ulm.ac.id</p>
 			</fieldset>
 
 		</form>
